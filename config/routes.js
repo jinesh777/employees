@@ -20,8 +20,10 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-
-
+  'GET /getEmployees':{action:'employee/get_employees'},
+  'POST /createEmployees':{action:'employee/save_employees'},
+  'PUT /updateEmployees':{action:'employee/update_employee'},
+  'DELETE /deleteEmployee':{action:'employee/delete_employee'},
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

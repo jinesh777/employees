@@ -1,29 +1,40 @@
-/**
- * Employee.js
- *
- * @description :: A model definition represents a database table/collection.
- * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
- */
-
 module.exports = {
+	tableName: "employees",
+	attributes: {
+		id: {
+			type: "number",
+			autoIncrement: true,
+			columnType: "int",
+			isInteger: true
+		},
+		name:{
+			type: "string",
+			columnType: "varchar",
+			maxLength: 20,
+			required: true
+		},
+		email: {
+			type: "string",
+			columnType: "varchar",
+			maxLength: 200,
+			required: true,
+			unique: true
 
-  attributes: {
-
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
+		},
+		phone: {
+			type: "number",
+			columnType: "int",
+			required: true,
+			      unique: true
 
 
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+		},
+		department: {
+			type: "string",
+			columnType: "varchar",
+			maxLength: 200,
+			required: true
+		}
 
-  },
-
+	}
 };
-
