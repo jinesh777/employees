@@ -16,6 +16,12 @@
 module.exports.datastores = {
 
 
+   test: {
+     //adapter: 'sails-disk',
+    //filePath: './tmp/'
+    adapter: 'sails-mongo',
+    url: 'mongodb://localhost:27017/sample'
+  },
   /***************************************************************************
   *                                                                          *
   * Your app's default datastore.                                            *

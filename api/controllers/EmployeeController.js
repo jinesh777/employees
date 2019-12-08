@@ -31,6 +31,22 @@ module.exports = {
 	// phone number length should be 10 digits
 	save_employees:async function(req,res,next){
 		var post_data = req.allParams();
+		
+		if ( !_.isString( req.param('email') ) ) {
+  			return res.badRequest();
+		}
+		if ( !_.isString( req.param('phone') ) ) {
+  			return res.badRequest();
+		}
+			if ( !_.isString( req.param('name') ) ) {
+  			return res.badRequest();
+		}
+			if ( !_.isString( req.param('department') ) ) {
+  			return res.badRequest();
+		}
+
+
+		
 		var emailExists = await Employee.find({ email: post_data.email });
 		var phone = await Employee.find({ phone: post_data.phone });
 		
@@ -92,7 +108,7 @@ module.exports = {
 	update_employee:async function(req,res,next){
 		var post_data = req.allParams();
 	
-		if(post_data.phone.toString().length<10){
+		if(post_data.phone.length!=10){
 			res.send({
 		    DES_CODE: "UVD02",
 	        status: 'failed',

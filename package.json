@@ -11,27 +11,34 @@
     "grunt": "1.0.1",
     "mocha": "^6.2.2",
     "sails": "^1.1.0",
-    "sails-hook-grunt": "^3.1.0",
+    "sails-disk": "^1.1.2",
+    "sails-hook-grunt": "^3.1.1",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^1.5.5",
+    "sails-memory": "^0.10.7",
     "sails-mongo": "^1.0.1"
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3",
-    "mocha": "^6.2.2"
+    "barrels": "^1.6.5",
+    "fixtures": "0.0.2",
+    "mocha": "^6.2.2",
+    "sails-disk": "^1.1.2",
+    "sails-memory": "^0.10.7",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
-    "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+    "debug": "node debug app.js",
+    "test": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/unit/controllers/*.test.js"
   },
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/employees.git"
+    "url": "git://github.com/jinesh777/employees.git"
   },
-  "author": "anonymous node/sails user",
+  "author": "Jinesh John",
   "license": "",
   "engines": {
     "node": "^11.10"
